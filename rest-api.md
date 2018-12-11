@@ -590,7 +590,7 @@ Get traders list
 
 * **Security:** SIGN
 
-* **POST** /api/v1/send
+* **POST** /api/v1/deposit
 
 * **Description:**
 Deposit money to some follow-trade account

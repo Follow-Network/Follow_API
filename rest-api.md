@@ -39,7 +39,7 @@
     * SIGN - Endpoint requires sending a valid TOKEN and Signature
     * COMMON - Endpoint requires sending a valid TOKEN
 
-### SIGNED (TRADE and USER_DATA) Endpoint security
+### SIGNED Endpoint security
 
 * *SIGNED* endpoints require an additional parameter, *signature*, to be sent in the *request body*.
 * Endpoints use *HMAC SHA256* signatures. The *HMAC SHA256* signature is a keyed *HMAC SHA256* operation. Use your *Ethereum private key* as the key and *totalParams* as the value for the HMAC operation

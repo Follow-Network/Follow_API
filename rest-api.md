@@ -3,8 +3,8 @@
 ## General information
 
 * Endpoints:
-* Dev: https://dev.api.thefollow.org
-* Prod: https://api.thefollow.org
+    * Dev: https://dev.api.thefollow.org
+    * Prod: https://api.thefollow.org
 * All endpoints return either a JSON object or array
 * Data is returned in **ascending** order. Oldest first, newest last
 * All time and timestamp related fields are in milliseconds
@@ -15,8 +15,8 @@
 * Any endpoint can return an ERROR; the error payload is as follows:
 ```
 {
-"code": -567,
-"msg": "Existing login"
+  "code": -567,
+  "msg": "Existing login"
 }
 ```
 * For *GET* endpoints, parameters must be sent as a *query string*
@@ -35,9 +35,9 @@
 * *TOKEN* is passed into the Rest API via the *X-MBX-TOKEN* header
 * *TOKENs* and *private keys* **are case sensitive**
 * Security Types:
-* NONE - Endpoint can be accessed freely
-* SIGN - Endpoint requires sending a valid TOKEN and Signature
-* COMMON - Endpoint requires sending a valid TOKEN
+    * NONE - Endpoint can be accessed freely
+    * SIGN - Endpoint requires sending a valid TOKEN and Signature
+    * COMMON - Endpoint requires sending a valid TOKEN
 
 ### SIGNED (TRADE and USER_DATA) Endpoint security
 
@@ -85,10 +85,10 @@ Register user and add user credentials
 
 ```
 {
-"pubkey": "168bs115a2ee09042d83d7c5811b533620531f67",
-"username": "Follow1",
-"password": "Follow123",
-"signature": "090bs115a2ee09042d83d7c5811b421520531859"
+    "pubkey": "168bs115a2ee09042d83d7c5811b533620531f67",
+    "username": "Follow1",
+    "password": "Follow123",
+    "signature": "090bs115a2ee09042d83d7c5811b421520531859"
 }
 
 ```
@@ -114,16 +114,16 @@ Authenticate user on server
 
 ```
 {
-"username": "Follow1",
-"password": "Follow123"
+    "username": "Follow1",
+    "password": "Follow123"
 }
 
 ```
 * **Response body:** application/json
 ```
 {    
-"userId": 123456,
-"token": "168bs115a2ee09042d83d7c5811b533620531f67"
+    "userId": 123456,
+    "token": "168bs115a2ee09042d83d7c5811b533620531f67"
 }
 ```
 
@@ -146,19 +146,19 @@ Set user info
 
 ```
 {
-"name": {
-"first": "Vasiliy",
-"middle": "Vasilievich",
-"second": "Vasiliev"
-},
-"phone": "8-800-555-3535",
-"email": "follow123@gmail.com",
-"country": "Russia",
-"image_url": "https://image/png",
-"birthday": 1544422247000,
-"regdate": 1544422247000,
-"signature": "090bs115a2ee09042d83d7c5811b421520531859"
-
+    "name": {
+        "first": "Vasiliy",
+        "middle": "Vasilievich",
+        "second": "Vasiliev"
+    },
+    "phone": "8-800-555-3535",
+    "email": "follow123@gmail.com",
+    "country": "Russia",
+    "image_url": "https://image/png",
+    "birthday": 1544422247000,
+    "regdate": 1544422247000,
+    "signature": "090bs115a2ee09042d83d7c5811b421520531859"
+    
 }
 
 ```
@@ -179,27 +179,27 @@ Get user info
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Response body:** application/json
 ```
 {
-"name": {
-"first": "Vasiliy",
-"middle": "Vasilievich",
-"second": "Vasiliev"
-},
-"username": "Follow123",
-"phone": "8-800-555-3535",
-"email": "follow123@gmail.com",
-"country": "Russia",
-"image_url": "https://image/png",
-"birthday": 1544422247000,
-"regdate": 1544422247000
+    "name": {
+        "first": "Vasiliy",
+        "middle": "Vasilievich",
+        "second": "Vasiliev"
+    },
+    "username": "Follow123",
+    "phone": "8-800-555-3535",
+    "email": "follow123@gmail.com",
+    "country": "Russia",
+    "image_url": "https://image/png",
+    "birthday": 1544422247000,
+    "regdate": 1544422247000
 }
 ```
 
@@ -215,24 +215,24 @@ Get user info
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Response body:** application/json
 ```
 {
-"name": {
-"first": "Vasiliy",
-"middle": "Vasilievich",
-"second": "Vasiliev"
-},
-"username": "Follow123",
-"country": "Russia",
-"image_url": "https://image/png",
-"birthday": 1544422247000
+    "name": {
+        "first": "Vasiliy",
+        "middle": "Vasilievich",
+        "second": "Vasiliev"
+    },
+    "username": "Follow123",
+    "country": "Russia",
+    "image_url": "https://image/png",
+    "birthday": 1544422247000
 }
 ```
 
@@ -250,29 +250,29 @@ Get trader info
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Response body:** application/json
 ```
 {
-"followersBalance": 1000000,
-"followersCount": 1,
-"followersChange": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-},
-"selfChange": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-}
+    "followersBalance": 1000000,
+    "followersCount": 1,
+    "followersChange": {
+        "daily": -1.5
+        "monthly": -5.5,
+        "yearly": 5.1,
+        "alltime": 5.1
+    },
+    "selfChange": {
+        "daily": -1.5
+        "monthly": -5.5,
+        "yearly": 5.1,
+        "alltime": 5.1
+    }
 }
 ```
 
@@ -288,29 +288,29 @@ Get trader followers list
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Response body:** application/json
 ```
 [
-{
-"id": 3,
-"username": "HOWHOWHOW",
-"imageUrl": "https://image.png",
-"deposit": 100.0,
-"balance": 105.1,
-"startDate": 1544422247000,
-"change": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-}
-}
+    {
+        "id": 3,
+        "username": "HOWHOWHOW",
+        "imageUrl": "https://image.png",
+        "deposit": 100.0,
+        "balance": 105.1,
+        "startDate": 1544422247000,
+        "change": {
+            "daily": -1.5
+            "monthly": -5.5,
+            "yearly": 5.1,
+            "alltime": 5.1
+        }
+    }
 ]
 ```
 
@@ -326,41 +326,41 @@ Get trader balance state
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
-* **startTime**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Start timestamp on graph
-* *Example*: 1544422247000
-* **endTime**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: End timestamp on graph
-* *Example*: 1544422247001
-* **period**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Graph period
-* *Example*: 600
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
+    * **startTime**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Start timestamp on graph
+        * *Example*: 1544422247000
+    * **endTime**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: End timestamp on graph
+        * *Example*: 1544422247001
+    * **period**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Graph period
+        * *Example*: 600
 
 * **Response body:** application/json
 ```
 {
-"currentBalance": 100,
-"states": [
-{
-"timestamp": 1544422247000,
-"balance": "99",
-},
-{
-"timestamp": 1544422247001,
-"balance": "100",
-}
-]
+    "currentBalance": 100,
+    "states": [
+        {
+            "timestamp": 1544422247000,
+            "balance": "99",
+        },
+        {
+            "timestamp": 1544422247001,
+            "balance": "100",
+        }
+    ]
 }
 ```
 
@@ -376,29 +376,29 @@ Get trader deals list
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
-* **page**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Page of traders deals list
-* *Example*: 1
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
+    * **page**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Page of traders deals list
+        * *Example*: 1
 
 * **Response body:** application/json
 ```
 [
-{
-"timestamp": 1544422247000,
-"symbol": "ETHW3S",
-"price": "1.00000000",
-"status": "filled",
-"side": "sell",
-"stopPrice": "0.0",
-"invested": "7.84" //precentage amount from capital
-}
+    {
+        "timestamp": 1544422247000,
+        "symbol": "ETHW3S",
+        "price": "1.00000000",
+        "status": "filled",
+        "side": "sell",
+        "stopPrice": "0.0",
+        "invested": "7.84" //precentage amount from capital
+    }
 ]
 ```
 
@@ -416,30 +416,30 @@ Get follower info
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Response body:** application/json
 ```
 {
-"deposit": 100,
-"balance": 105,
-"tradersCount": 1,
-"tradersChange": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-},
-"selfChange": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-}
+    "deposit": 100,
+    "balance": 105,
+    "tradersCount": 1,
+    "tradersChange": {
+        "daily": -1.5
+        "monthly": -5.5,
+        "yearly": 5.1,
+        "alltime": 5.1
+    },
+    "selfChange": {
+        "daily": -1.5
+        "monthly": -5.5,
+        "yearly": 5.1,
+        "alltime": 5.1
+    }
 }
 ```
 
@@ -455,29 +455,29 @@ Get follower traders list
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Response body:** application/json
 ```
 [
-{
-"id": 3,
-"username": "HOWHOWHOW",
-"imageUrl": "https://image.png",
-"deposit": 100.0,
-"balance": 105.1,
-"startDate": 1544422247000,
-"change": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-}
-}
+    {
+        "id": 3,
+        "username": "HOWHOWHOW",
+        "imageUrl": "https://image.png",
+        "deposit": 100.0,
+        "balance": 105.1,
+        "startDate": 1544422247000,
+        "change": {
+            "daily": -1.5
+            "monthly": -5.5,
+            "yearly": 5.1,
+            "alltime": 5.1
+        }
+    }
 ]
 ```
 
@@ -493,41 +493,41 @@ Get follower balance state
 * **Weight:** 1
 
 * **Parameters:**
-* **id**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: User id
-* *Example*: 123
-* **startTime**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Start timestamp on graph
-* *Example*: 1544422247000
-* **endTime**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: End timestamp on graph
-* *Example*: 1544422247001
-* **period**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Graph period
-* *Example*: 600
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
+    * **startTime**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Start timestamp on graph
+        * *Example*: 1544422247000
+    * **endTime**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: End timestamp on graph
+        * *Example*: 1544422247001
+    * **period**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Graph period
+        * *Example*: 600
 
 * **Response body:** application/json
 ```
 {
-"currentBalance": 100,
-"states": [
-{
-"timestamp": 1544422247000,
-"balance": "99",
-},
-{
-"timestamp": 1544422247001,
-"balance": "100",
-}
-]
+    "currentBalance": 100,
+    "states": [
+        {
+            "timestamp": 1544422247000,
+            "balance": "99",
+        },
+        {
+            "timestamp": 1544422247001,
+            "balance": "100",
+        }
+    ]
 }
 ```
 
@@ -545,42 +545,42 @@ Get traders list
 * **Weight:** 1
 
 * **Parameters:**
-* **sort**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Sorting type id representation (ex: 1 - by profit per year, etc.)
-* *Example*: 1
-* **limit**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Amount per page
-* *Example*: 100
-* **page**:
-* *Type*: Integer
-* *In*: Path
-* *Description*: Page of traders list
-* *Example*: 10
+    * **sort**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Sorting type id representation (ex: 1 - by profit per year, etc.)
+        * *Example*: 1
+    * **limit**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Amount per page
+        * *Example*: 100
+    * **page**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: Page of traders list
+        * *Example*: 10
 
 * **Response body:** application/json
 ```
 [
-"id": 3,
-"username": "HOWHOWHOW",
-"imageUrl": "https://image.png",
-"followersBalance": 1000000,
-"followersCount": 1,
-"followersChange": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-},
-"selfChange": {
-"daily": -1.5
-"monthly": -5.5,
-"yearly": 5.1,
-"alltime": 5.1
-}
+    "id": 3,
+    "username": "HOWHOWHOW",
+    "imageUrl": "https://image.png",
+    "followersBalance": 1000000,
+    "followersCount": 1,
+    "followersChange": {
+        "daily": -1.5
+        "monthly": -5.5,
+        "yearly": 5.1,
+        "alltime": 5.1
+    },
+    "selfChange": {
+        "daily": -1.5
+        "monthly": -5.5,
+        "yearly": 5.1,
+        "alltime": 5.1
+    }
 ]
 ```
 
@@ -603,12 +603,12 @@ Deposit money to some follow-trade account
 
 ```
 {
-"amount": "14.04",
-"timestamp": 1544422247000,
-"followerId": 1,
-"traderId": 2,
-"txHash": "090bs115a2ee09042d83d7c5811b421520531859",
-"signature": "090bs115a2ee09042d83d7c5811b421520531812"
+    "amount": "14.04",
+    "timestamp": 1544422247000,
+    "followerId": 1,
+    "traderId": 2,
+    "txHash": "090bs115a2ee09042d83d7c5811b421520531859",
+    "signature": "090bs115a2ee09042d83d7c5811b421520531812"
 }
 ```
 
@@ -634,11 +634,11 @@ Withdraw money from some follow-trade account
 
 ```
 {
-"amount": "14.04",
-"timestamp": 1544422247000,
-"followerId": 1,
-"traderId": 2,
-"signature": "090bs115a2ee09042d83d7c5811b421520531812"
+    "amount": "14.04",
+    "timestamp": 1544422247000,
+    "followerId": 1,
+    "traderId": 2,
+    "signature": "090bs115a2ee09042d83d7c5811b421520531812"
 }
 ```
 
@@ -646,6 +646,3 @@ Withdraw money from some follow-trade account
 ```
 {}
 ```
-
-
-

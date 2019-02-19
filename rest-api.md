@@ -86,7 +86,7 @@ Register user and add user credentials
 ```
 {
     "pubkey": "168bs115a2ee09042d83d7c5811b533620531f67",
-    "username": "Follow1",
+    "username": "Trader",
     "password": "Follow123",
     "signature": "090bs115a2ee09042d83d7c5811b421520531859"
 }
@@ -114,7 +114,7 @@ Authenticate user on server
 
 ```
 {
-    "username": "Follow1",
+    "username": "Trader",
     "password": "Follow123"
 }
 
@@ -122,7 +122,7 @@ Authenticate user on server
 * **Response body:** application/json
 ```
 {    
-    "userId": 123456,
+    "user_id": 123456,
     "token": "168bs115a2ee09042d83d7c5811b533620531f67"
 }
 ```
@@ -146,11 +146,9 @@ Set user info
 
 ```
 {
-    "name": {
-        "first": "Vasiliy",
-        "middle": "Vasilievich",
-        "second": "Vasiliev"
-    },
+    "username": "Trader",
+    "first_name": "Vasiliy",
+    "last_name": "Vasiliev",
     "phone": "8-800-555-3535",
     "email": "follow123@gmail.com",
     "country": "Russia",
@@ -188,12 +186,9 @@ Get user info
 * **Response body:** application/json
 ```
 {
-    "name": {
-        "first": "Vasiliy",
-        "middle": "Vasilievich",
-        "second": "Vasiliev"
-    },
-    "username": "Follow123",
+    "username": "Trader",
+    "first_name": "Vasiliy",
+    "last_name": "Vasiliev",
     "phone": "8-800-555-3535",
     "email": "follow123@gmail.com",
     "country": "Russia",
@@ -224,12 +219,9 @@ Get user info
 * **Response body:** application/json
 ```
 {
-    "name": {
-        "first": "Vasiliy",
-        "middle": "Vasilievich",
-        "second": "Vasiliev"
-    },
-    "username": "Follow123",
+    "username": "Trader",
+    "first_name": "Vasiliy",
+    "last_name": "Vasiliev",
     "country": "Russia",
     "image_url": "https://image/png",
     "birthday": 1544422247000
@@ -259,15 +251,15 @@ Get trader info
 * **Response body:** application/json
 ```
 {
-    "followersBalance": 1000000,
-    "followersCount": 1,
-    "followersChange": {
+    "followers_balance": 1000000,
+    "followers_count": 1,
+    "followers_change": {
         "daily": -1.5
         "monthly": -5.5,
         "yearly": 5.1,
         "alltime": 5.1
     },
-    "selfChange": {
+    "self_change": {
         "daily": -1.5
         "monthly": -5.5,
         "yearly": 5.1,
@@ -300,7 +292,7 @@ Get trader followers list
     {
         "id": 3,
         "username": "HOWHOWHOW",
-        "imageUrl": "https://image.png",
+        "image_url": "https://image.png",
         "deposit": 100.0,
         "balance": 105.1,
         "startDate": 1544422247000,
@@ -350,7 +342,7 @@ Get trader balance state
 * **Response body:** application/json
 ```
 {
-    "currentBalance": 100,
+    "current_balance": 100,
     "states": [
         {
             "timestamp": 1544422247000,
@@ -396,7 +388,7 @@ Get trader deals list
         "price": "1.00000000",
         "status": "filled",
         "side": "sell",
-        "stopPrice": "0.0",
+        "stop_price": "0.0",
         "invested": "7.84" //precentage amount from capital
     }
 ]
@@ -427,14 +419,14 @@ Get follower info
 {
     "deposit": 100,
     "balance": 105,
-    "tradersCount": 1,
-    "tradersChange": {
+    "traders_count": 1,
+    "traders_change": {
         "daily": -1.5
         "monthly": -5.5,
         "yearly": 5.1,
         "alltime": 5.1
     },
-    "selfChange": {
+    "self_change": {
         "daily": -1.5
         "monthly": -5.5,
         "yearly": 5.1,
@@ -467,10 +459,10 @@ Get follower traders list
     {
         "id": 3,
         "username": "HOWHOWHOW",
-        "imageUrl": "https://image.png",
+        "image_url": "https://image.png",
         "deposit": 100.0,
         "balance": 105.1,
-        "startDate": 1544422247000,
+        "start_date": 1544422247000,
         "change": {
             "daily": -1.5
             "monthly": -5.5,
@@ -517,7 +509,7 @@ Get follower balance state
 * **Response body:** application/json
 ```
 {
-    "currentBalance": 100,
+    "current_balance": 100,
     "states": [
         {
             "timestamp": 1544422247000,
@@ -566,16 +558,16 @@ Get traders list
 [
     "id": 3,
     "username": "HOWHOWHOW",
-    "imageUrl": "https://image.png",
-    "followersBalance": 1000000,
-    "followersCount": 1,
-    "followersChange": {
+    "image_url": "https://image.png",
+    "followers_balance": 1000000,
+    "followers_count": 1,
+    "followers_change": {
         "daily": -1.5
         "monthly": -5.5,
         "yearly": 5.1,
         "alltime": 5.1
     },
-    "selfChange": {
+    "self_change": {
         "daily": -1.5
         "monthly": -5.5,
         "yearly": 5.1,
@@ -605,9 +597,9 @@ Deposit money to some follow-trade account
 {
     "amount": "14.04",
     "timestamp": 1544422247000,
-    "followerId": 1,
-    "traderId": 2,
-    "txHash": "090bs115a2ee09042d83d7c5811b421520531859",
+    "follower_id": 1,
+    "trader_id": 2,
+    "tx_hash": "090bs115a2ee09042d83d7c5811b421520531859",
     "signature": "090bs115a2ee09042d83d7c5811b421520531812"
 }
 ```
@@ -636,8 +628,8 @@ Withdraw money from some follow-trade account
 {
     "amount": "14.04",
     "timestamp": 1544422247000,
-    "followerId": 1,
-    "traderId": 2,
+    "follower_id": 1,
+    "trader_id": 2,
     "signature": "090bs115a2ee09042d83d7c5811b421520531812"
 }
 ```

@@ -133,14 +133,19 @@ Authenticate user on server
 
 * **Security:** SIGN
 
-* **POST** /api/v1/user/set
+* **POST** /api/v1/user/{id}/set
 
 * **Description:**
 Set user info
 
 * **Weight:** 1
 
-* **Parameters:** NONE
+* **Parameters:**
+    * **id**:
+        * *Type*: Integer
+        * *In*: Path
+        * *Description*: User id
+        * *Example*: 123
 
 * **Request body:** application/json
 
@@ -156,7 +161,6 @@ Set user info
     "birthday": 1544422247000,
     "regdate": 1544422247000,
     "signature": "090bs115a2ee09042d83d7c5811b421520531859"
-    
 }
 
 ```
@@ -290,7 +294,6 @@ Get trader followers list
 ```
 [
     {
-        "id": 3,
         "username": "HOWHOWHOW",
         "image_url": "https://image.png",
         "deposit": 100.0,

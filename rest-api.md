@@ -532,7 +532,7 @@ Get follower balance state
 
 * **Security:** NONE
 
-* **GET** /api/v1/traders/{sort}/{limit}/{page}
+* **GET** /api/v1/traders/{sort}/{page}
 
 * **Description:**
 Get traders list
@@ -545,11 +545,6 @@ Get traders list
         * *In*: Path
         * *Description*: Sorting type id representation (ex: 1 - by profit per year, etc.)
         * *Example*: 1
-    * **limit**:
-        * *Type*: Integer
-        * *In*: Path
-        * *Description*: Amount per page
-        * *Example*: 100
     * **page**:
         * *Type*: Integer
         * *In*: Path

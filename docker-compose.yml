@@ -1,0 +1,69 @@
+version: '2'
+
+
+services:
+    database:
+        image: "postgres:9.6.5"
+        networks:
+            - database_network
+        volumes:
+            - "dbdata:/var/lib/postgresql/data"
+        env_file:
+            - ./database/vars.env
+
+    nginx:
+        build: ./nginx
+        depends_on:
+            - node1
+            - node2
+            - node3
+        links:
+            - node1:node1
+            - node2:node2
+            - node3:node3
+        ports:
+            - "80:80"
+        # volumes:
+        #     - ./conf.d:/etc/nginx/conf.d
+        networks:
+            - web_network
+            - database_network
+
+    node1:
+        build: ./node/api_v1
+        depends_on:
+            - database
+        ports:
+            - "5000"
+        networks:
+            - web_network
+            - database_network
+
+    node2:
+        build: ./node/api_v1
+        depends_on:
+            - database
+        ports:
+            - "5000"
+        networks:
+            - web_network
+            - database_network
+
+    node3:
+        build: ./node/api_v1
+        depends_on:
+            - database
+        ports:
+            - "5000"
+        networks:
+            - web_network
+
+networks:
+    database_network:
+        driver: bridge
+    web_network:
+        driver: bridge
+
+
+volumes:
+    dbdata:
